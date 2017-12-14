@@ -6,6 +6,7 @@
 # something about boot loader..."linprocfs"... I think freenas already does this
 
 
+
 GAMES_DIR="/usr/local/games"
 MINECRAFT_DIR="$GAMES_DIR/minecraft"
 
@@ -15,22 +16,8 @@ MINECRAFT_DIR="$GAMES_DIR/minecraft"
 #                  F U N C T I O N S
 #======================================================
 
-#------------------------------------------------------
-# install the package
-#------------------------------------------------------
-Install_Package ()
-{
-
-    # get the package to install from parm $1
-  _package="$1"
-
-    # display the package being installed
-  echo; echo Installing: "$_package"
-
-    # install the package
-  pkg install -y "$_package"
-
-}
+# functions to help installation
+. ./functions.sh
 
 
 #------------------------------------------------------
