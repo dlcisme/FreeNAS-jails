@@ -23,7 +23,7 @@ pkg update
 # upgrade any installed packages
 echo
 echo upgrading packages
-pkg upgrade
+pkg upgrade -y
 
 
 
