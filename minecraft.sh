@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# code borrowed from:
-# https://minecraft.codeemo.com/mineoswiki/index.php?title=MineOS-node_(pkg_add)
-
-# something about boot loader..."linprocfs"... I think freenas already does this
-
-
 
 GAMES_DIR="/usr/local/games"
 MINECRAFT_DIR="$GAMES_DIR/minecraft"
@@ -38,6 +32,10 @@ Install_Required_Packages ()
   Install_Package "npm4"
   Install_Package "openjdk8-jre"
 
+  # not required, but some Minecraft mods require them
+  Install_Package "bash"
+  Install_Package "wget"
+
 }
 
 
@@ -47,13 +45,17 @@ Install_Required_Packages ()
 Install_MineOS ()
 {
 
+  echo 
+  echo create directory /usr/local/compat/linux/proc
+  mkdir -p /usr/local/compat/linux/proc
+
   echo
-  echo create directory /usr/local/games
-  mkdir -p /usr/local/games
+  echo create directory $GAMES_DIR
+  mkdir -p $GAMES_DIR
 
   echo
   echo get MineOS from github
-  git clone git://github.com/hexparrot/mineos-node /usr/local/games/minecraft
+  git clone git://github.com/hexparrot/mineos-node $MINECRAFT_DIR
 
   echo
   echo grant execute permission to files
@@ -72,7 +74,7 @@ Install_MineOS ()
 
   echo
   echo create NPM modules
-  echo "CXX=c++ npm install" | sh
+  echo "cd/ $MINECRAFT_DIR/; CXX=c++ npm install" | sh
 
 }
 
@@ -96,6 +98,22 @@ Start_web-ui ()
 }
 
 
+#------------------------------------------------------
+# add user
+#------------------------------------------------------
+Add_user ()
+{
+
+  # add the unprivileged mcserver user
+
+  echo
+  echo add MCSERVER user
+  echo mcserver | pw user add -n mcserver -s /bin/bash -m -h 0 -c "User for MineOS" -G games
+
+}
+
+
+
 
 #=======================================================
 #                M A I N   P R O G R A M
@@ -109,3 +127,6 @@ Install_MineOS
 
 # Start the web-ui at boot time
 Start_web-ui
+
+# Add mcserrver user
+Add-user
