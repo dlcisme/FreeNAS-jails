@@ -35,7 +35,7 @@ Install_Required_Packages ()
   Install_Package "git"
   Install_Package "sysutils/py-supervisor"
   Install_Package "node"
-  Install_Package "www/npm"
+  Install_Package "npm4"
   Install_Package "openjdk8-jre"
 
 }
@@ -53,7 +53,7 @@ Install_MineOS ()
 
   echo
   echo get MineOS from github
-  git clone git://github.com/hexparrot/mineos-node/usr/local/games/minecraft
+  git clone git://github.com/hexparrot/mineos-node /usr/local/games/minecraft
 
   echo
   echo grant execute permission to files
@@ -71,7 +71,7 @@ Install_MineOS ()
   cp $MINECRAFT_DIR/mineos.conf /etc/mineos.conf
 
   echo
-  echo not sure what this does
+  echo create NPM modules
   echo "CXX=c++ npm install" | sh
 
 }
