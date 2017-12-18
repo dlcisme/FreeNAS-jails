@@ -5,7 +5,7 @@
 # code borrowed from:
 # https://github.com/Radarr/Radarr/wiki/Installation
 # check if running into errors as it offers hints
-# NOTE: github has another package being installed 
+# NOTE: github has another package being installed
 #       which is not installed here
 
 
@@ -14,6 +14,8 @@
 # installed
 VERSION="0.2.0.870"
 
+# directory where Radarr will be installed
+RADARR_DIR="/usr/local/share"
 
 # update any installed packages
 echo
@@ -57,15 +59,15 @@ Install_Radarr ()
 
   echo
   echo fetch Radarr
-  fetch https://github.com/Radarr/Radarr/releases/download/v"$VERSION"/Radarr.develop."$VERSION".linux.tar.gz
+  fetch https://github.com/Radarr/Radarr/releases/download/v"$VERSION"/Radarr.develop."$VERSION".linux.tar.gz $RADARR_DIR
 
   echo
-  echo untar Radarr
-  tar -xzvf Radarr.*.linux.tar.gz
+  echo untar $RADARR_DIR/Radarr
+  tar -xzvf $RADARR_DIR/Radarr.*.linux.tar.gz
 
   echo
   echo cleanup Radarr files
-  rm Radarr.*.linux.tar.gz
+  rm $RADARR/Radarr.*.linux.tar.gz
 
 }
 
