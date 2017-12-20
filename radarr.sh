@@ -59,15 +59,15 @@ Install_Radarr ()
 
   echo
   echo fetch Radarr
-  fetch https://github.com/Radarr/Radarr/releases/download/v"$VERSION"/Radarr.develop."$VERSION".linux.tar.gz $RADARR_DIR
+  fetch https://github.com/Radarr/Radarr/releases/download/v"$VERSION"/Radarr.develop."$VERSION".linux.tar.gz
 
   echo
-  echo untar $RADARR_DIR/Radarr
-  tar -xzvf $RADARR_DIR/Radarr.*.linux.tar.gz
+  echo Put Radarr in $RADARR_DIR
+  tar -xzvf Radarr.*.linux.tar.gz -C $RADARR_DIR
 
   echo
   echo cleanup Radarr files
-  rm $RADARR/Radarr.*.linux.tar.gz
+  rm Radarr.*.linux.tar.gz
 
 }
 
