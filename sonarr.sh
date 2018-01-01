@@ -6,8 +6,10 @@
 # install sonarr
 Install_Package "sonarr"
 
-#pw user add media -c media -u 816 -d /nonexistent -s /usr/bin/nologin
-
+# NOTE:  FreeNAS installs user "Media" and group "Media when
+#        the jail gets created
+# pw groupadd 'media' -g '816'
+# pw useradd 'media' -u '816' -g 'media'
 
 #chown -R media:media /usr/local/share/sonarr
 
