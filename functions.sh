@@ -11,7 +11,7 @@ Install_Package ()
   _package="$1"
 
     # display the package being installed
-  echo; echo Installing: "$_package"
+  echo; echo =====\> Installing: "$_package"
 
     # install the package
   pkg install -y "$_package"
