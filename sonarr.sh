@@ -29,3 +29,21 @@ sysrc  "sonarr_enable=YES"
 # add sonarr user to media group
 #echo =====\> add "sonarr" user to "media" group
 #pw groupmod media -m sonarr
+
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# sonarr_enable (bool): Set to NO by default.
+#                       Set it to YES to enable it.
+# sonarr_data_dir:      Directory where sonarr configuration
+#                       data is stored.
+#                       Default: /home/${sonarr_user}/.config/NzbDrone
+# sonarr_user:  The user account sonarr daemon runs as what
+#                       you want it to be. It uses '%%USER%%' user by
+#                       default. Do not sets it as empty or it will run
+#                       as root.
+# sonarr_group: The group account sonarr daemon runs as what
+#                       you want it to be. It uses '%%GROUP%%' group by
+#                       default. Do not sets it as empty or it will run
+#                       as wheel.
