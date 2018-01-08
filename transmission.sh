@@ -1,16 +1,5 @@
 #!/bin/sh
 
-# functions to help installation
-. ./functions.sh
-
-# install transmission
-Install_Package "transmission"
-
-# enable transmission to start at boot
-echo =====\> enable transmission to start at boot
-sysrc "transmission_enable=YES"
-
-
 
 # Add the following lines to /etc/rc.conf to enable this service:
 #
@@ -32,4 +21,20 @@ sysrc "transmission_enable=YES"
 #			     permissions for its home directory.  If this
 #			     causes problems, set this variable to no.
 
+# functions to help installation
+. ./functions.sh
 
+# install transmission
+Install_Package "transmission"
+
+# enable transmission to start at boot
+echo =====\> enable transmission to start at boot
+sysrc "transmission_enable=YES"
+
+# directory for transmission configuration files
+echo =====\> set directory for transmission configuation files
+sysrc "transmission_config_dir=/Transmission"
+
+# directory for transmission download files
+echo =====\> set directory for transmission download files
+sysrc "transmission_download_dir=/media/Downloads"
