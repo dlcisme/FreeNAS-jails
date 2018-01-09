@@ -33,7 +33,7 @@ sysrc "transmission_enable=YES"
 
 # directory for transmission configuration files
 echo =====\> set directory for transmission configuation files
-sysrc "transmission_config_dir=/Transmission"
+sysrc "transmission_conf_dir=/Transmission"
 
 # directory for transmission download files
 echo =====\> set directory for transmission download files
