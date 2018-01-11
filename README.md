@@ -1,6 +1,8 @@
 # FreeNAS-jails
 Scripts to install software in jails
 
+Note: Parametes for start up scripts are kept in (program name).in.  Use "find / -name (program name).in" to find the location of the file to get the start up script parameters to set in /etc/rc.conf file.
+
 Todo:  When creating jails
 
 Jail name: media_jail
