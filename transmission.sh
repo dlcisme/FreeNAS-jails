@@ -1,7 +1,7 @@
 #!/bin/sh
 
-_TRANSMISSION_CONFIG_DIR=/Transmission
-_TRANSMISSION_DOWNLOAD_DIR=/Transmission/Downloads
+_TRANSMISSION_CONFIG_DIR=/_Transmission
+_TRANSMISSION_DOWNLOAD_DIR=/_Transmission/Downloads
 
 # Add the following lines to /etc/rc.conf to enable this service:
 #
