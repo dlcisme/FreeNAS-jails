@@ -1,6 +1,6 @@
 #!/bin/sh
 
-_NGINX_DATA_DIR=/_Nginx
+_NGINX_DATA_DIR=/app-data/Nginx
 
 
 #
