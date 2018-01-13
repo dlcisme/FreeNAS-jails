@@ -27,6 +27,10 @@ _SONARR_USER=media
 # install sonarr
 Install_Package "sonarr"
 
+# make sonarr the owner of app-data directory
+echo =====\> make sonarr owner of $_SONARR_CONFIG_DIR config directory
+chown -R sonarr:sonarr $_SONARR_CONFIG_DIR
+
 # NOTE:  FreeNAS installs user "Media" and group "Media when
 #        the jail gets created
 # pw groupadd 'media' -g '816'
