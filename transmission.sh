@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _TRANSMISSION_CONFIG_DIR=/app-data/Transmission
-_TRANSMISSION_DOWNLOAD_DIR=/app-data/Transmission/Downloads
+_TRANSMISSION_DOWNLOAD_DIR=/app-data/Downloads
 
 
 
