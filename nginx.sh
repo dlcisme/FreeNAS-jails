@@ -27,6 +27,10 @@ _NGINX_DATA_DIR=/app-data/Nginx
 # install "nginx" package
 Install_Package "nginx"
 
+# make nginx the owner of Nginx config directory
+echo =====\> make nginx owner of $_NGINX_DATA_DIR config directory
+chown -R nginx:nginx $_NGINX_DATA_DIR
+
 # enable nginx to start at boot
 echo =====\> enable nginx to start at boot
 sysrc "nginx_enable=YES"
