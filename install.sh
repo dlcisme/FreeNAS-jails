@@ -14,9 +14,10 @@ _OPTIONS="
 1. Install Nano
 2. Install Nginx
 3. Install Transmission
-4. Install Radarr
+4. Install Jackett
 5. Install Sonarr
-6. Install Minecraft
+6. Install Radarr
+7. Install Minecraft
 Q. Quit
 "
 
@@ -72,9 +73,10 @@ Do_User_Choice ()
      1 ) Install_Choice "nano" ;;
      2 ) Install_Choice "nginx" ;;
      3 ) Install_Choice "transmission" ;;
-     4 ) Install_Choice "radarr" ;;
+     4 ) Install_Choice "jackett" ;;
      5 ) Install_Choice "sonarr" ;;
-     6 ) Install_Choice "minecraft" ;;
+     6 ) Install_Choice "radarr" ;;
+     7 ) Install_Choice "minecraft" ;;
    q|Q ) break;;
      * ) _Error_Message="$_CHOICE_ERR_MSG $_choice" ;;
   esac
