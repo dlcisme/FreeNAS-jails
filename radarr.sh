@@ -37,6 +37,9 @@ chown -R radarr:radarr $_RADARR_DATA_DIR
 
 #chown -R media:media /usr/local/share/radarr
 
+echo =====\> set radarr data dir to $_RADARR_DATA_DIR
+sysrc "radarr_data_dir=$_RADARR_DATA_DIR"
+
 echo =====\> enable radarr start at boot
 sysrc "radarr_enable=YES"
 
