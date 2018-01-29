@@ -46,3 +46,6 @@ sysrc "transmission_conf_dir=$_TRANSMISSION_CONFIG_DIR"
 # directory for transmission download files
 echo =====\> set directory for transmission download files
 sysrc "transmission_download_dir=$_TRANSMISSION_DOWNLOAD_DIR"
+
+# change transmission's group to be media
+pw usermod transmission -g media
