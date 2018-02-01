@@ -30,13 +30,6 @@ Install_Package "radarr"
 echo =====\> make radarr owner of $_RADARR_CONFIG_DIR config directory
 chown -R radarr:radarr $_RADARR_DATA_DIR
 
-# NOTE:  FreeNAS installs user "Media" and group "Media when
-#        the jail gets created
-# pw groupadd 'media' -g '816'
-# pw useradd 'media' -u '816' -g 'media'
-
-#chown -R media:media /usr/local/share/radarr
-
 echo =====\> set radarr data dir to $_RADARR_DATA_DIR
 sysrc "radarr_data_dir=$_RADARR_DATA_DIR"
 
