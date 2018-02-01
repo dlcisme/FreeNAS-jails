@@ -34,25 +34,11 @@ Install_Package "jackett"
 echo =====\> make jackett owner of $_JACKETT_CONFIG_DIR config directory
 chown -R jackett:jackett $_JACKETT_DATA_DIR
 
-# NOTE:  FreeNAS installs user "Media" and group "Media when
-#        the jail gets created
-# pw groupadd 'media' -g '816'
-# pw useradd 'media' -u '816' -g 'media'
-
-#chown -R media:media /usr/local/share/sonarr
-
+# set data directory for jackett
 echo =====\> set jackett data dir to $_JACKETT_DATA_DIR
 sysrc "jackett_data_dir=$_JACKETT_DATA_DIR"
 
-#echo =====\> have jackett run as user $_JACKETT_USER
-#sysrc "jackett_user=$_JACKETT_USER"
-
+# enable jackett to start at boot
 echo =====\> enable jackett to start at boot
 sysrc  "jackett_enable=YES"
-
-# no longer needed as we now set sonarr to run as user media
-# add sonarr user to media group
-#echo =====\> add "sonarr" user to "media" group
-#pw groupmod media -m sonarr
-
 
