@@ -31,13 +31,6 @@ Install_Package "sonarr"
 echo =====\> make sonarr owner of $_SONARR_CONFIG_DIR config directory
 chown -R sonarr:sonarr $_SONARR_DATA_DIR
 
-# NOTE:  FreeNAS installs user "Media" and group "Media when
-#        the jail gets created
-# pw groupadd 'media' -g '816'
-# pw useradd 'media' -u '816' -g 'media'
-
-#chown -R media:media /usr/local/share/sonarr
-
 echo =====\> set sonarr data dir to $_SONARR_DATA_DIR
 sysrc "sonarr_data_dir=$_SONARR_DATA_DIR"
 
@@ -47,9 +40,7 @@ sysrc "sonarr_data_dir=$_SONARR_DATA_DIR"
 echo =====\> enable sonarr to start at boot
 sysrc  "sonarr_enable=YES"
 
-# no longer needed as we now set sonarr to run as user media
-# add sonarr user to media group
-#echo =====\> add "sonarr" user to "media" group
-#pw groupmod media -m sonarr
+echo =====\> add "sonarr" user to "media" group
+pw groupmod media -m sonarr
 
 
