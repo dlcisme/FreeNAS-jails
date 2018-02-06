@@ -27,7 +27,7 @@ _RADARR_DATA_DIR=/app-data/Radarr
 Install_Package "radarr"
 
 # make radarr the owner of app-data directory
-echo =====\> make radarr owner of $_RADARR_CONFIG_DIR config directory
+echo =====\> make radarr owner of $_RADARR_DATA_DIR config directory
 chown -R radarr:radarr $_RADARR_DATA_DIR
 
 echo =====\> set radarr data dir to $_RADARR_DATA_DIR
