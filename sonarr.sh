@@ -28,7 +28,7 @@ _SONARR_USER=media
 Install_Package "sonarr"
 
 # make sonarr the owner of app-data directory
-echo =====\> make sonarr owner of $_SONARR_CONFIG_DIR config directory
+echo =====\> make sonarr owner of $_SONARR_DATA_DIR config directory
 chown -R sonarr:sonarr $_SONARR_DATA_DIR
 
 echo =====\> set sonarr data dir to $_SONARR_DATA_DIR
