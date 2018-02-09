@@ -15,23 +15,10 @@ _OPTIONS="
 1. Install Nginx
 2. Install Transmission
 3. Install Jackett
-4. Install 
-5. Install 
-6. Install 
-7. Install 
-8. Install
-9.  Install
-10. Install
-11. Install
-12. Install Sonarr
-13. Install Radarr
-14. Install
-15. Install
-16. Install
-17. Install
-18. Install
-19. Install
-20. Install
+4. Install Sonarr
+5. Install Radarr
+6. Install Plex
+7. Install Minecraft
 Q. Quit
 "
 
@@ -88,23 +75,10 @@ Do_User_Choice ()
      1 ) Install_Choice "nginx" ;;
      2 ) Install_Choice "transmission" ;;
      3 ) Install_Choice "jackett" ;;
-     4 ) Install_Choice "jackett" ;;
-     5 ) Install_Choice "" ;;
-     6 ) Install_Choice "" ;;
-     7 ) Install_Choice "" ;;
-     8 ) Install_Choice "" ;;
-     9 ) Install_Choice "" ;;
-     10 ) Install_Choice "" ;;
-     11 ) Install_Choice "" ;;
-     12 ) Install_Choice "sonarr" ;;
-     13 ) Install_Choice "radarr" ;;
-     14 ) Install_Choice "" ;;
-     15 ) Install_Choice "" ;;
-     16 ) Install_Choice "" ;;
-     17 ) Install_Choice "" ;;
-     18 ) Install_Choice "" ;;
-     19 ) Install_Choice "" ;;
-     20 ) Install_Choice "" ;;
+     4 ) Install_Choice "sonarr" ;;
+     5 ) Install_Choice "radarr" ;;
+     6 ) Install_Choice "plex" ;;
+     7 ) Install_Choice "minecraft" ;;
    q|Q ) break;;
      * ) _Error_Message="$_CHOICE_ERR_MSG $_choice" ;;
   esac
