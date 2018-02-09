@@ -70,7 +70,7 @@ Install_MineOS ()
   chmod +x $_MINECRAFT_DIR/generate-sslcert.sh
 
   echo; echo =====\> generate ssl certificate
-  $MINECRAFT_DIR/generate-sslcert.sh
+  $_MINECRAFT_DIR/generate-sslcert.sh
 
   echo; echo =====\> copy configuation file to system location
   cp $_MINECRAFT_DIR/mineos.conf /etc/mineos.conf
