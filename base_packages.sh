@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# this file contains the base packages you want
-# installed in each jail
+# put base packages here. These are packages you want
+# installed in every jail.
 
 # install nano
-. ./nano.sh
+./nano.sh
 
 # install bash
-. ./bash.sh
+./bash.sh
