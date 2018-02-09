@@ -71,7 +71,7 @@ Install_MineOS ()
   cp $MINECRAFT_DIR/mineos.conf /etc/mineos.conf
 
   echo; echo =====\> create NPM modules
-  echo "cd/ $MINECRAFT_DIR/; CXX=c++ npm install" | sh
+  echo "cd $MINECRAFT_DIR/; CXX=c++ npm install" | sh
 
 }
 
