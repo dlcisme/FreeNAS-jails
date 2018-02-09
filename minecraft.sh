@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# NOTE: you need the "s" in https to get to the webUI
+# https://www.xxx.yyy.zzz:8443
+
 # code borrowed from:
 # https://minecraft.codeemo.com/mineoswiki/index.php?title=MineOS-node_(pkg_add)
 # check here for most up to date procedures.
