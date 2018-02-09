@@ -5,8 +5,10 @@
 # check here for most up to date procedures.
 
 
-GAMES_DIR="/usr/local/games"
-MINECRAFT_DIR="$GAMES_DIR/minecraft"
+_GAMES_DIR="/usr/local/games"
+_MINECRAFT_DIR="$_GAMES_DIR/minecraft"
+_MINEOS_USER="mcserver"
+_MINEOS_PASSWORD="mcserver"
 
 
 
@@ -52,26 +54,26 @@ Install_MineOS ()
   echo; echo =====\> create directory /usr/local/compat/linux/proc
   mkdir -p /usr/local/compat/linux/proc
 
-  echo; echo =====\> create directory $GAMES_DIR
-  mkdir -p $GAMES_DIR
+  echo; echo =====\> create directory $_GAMES_DIR
+  mkdir -p $_GAMES_DIR
 
   echo; echo =====\> get MineOS from github
-  git clone git://github.com/hexparrot/mineos-node $MINECRAFT_DIR
+  git clone git://github.com/hexparrot/mineos-node $_MINECRAFT_DIR
 
   echo; echo =====\> grant execute permission to files
-  chmod +x $MINECRAFT_DIR/service.js
-  chmod +x $MINECRAFT_DIR/mineos_console.js
-  chmod +x $MINECRAFT_DIR/webui.js
-  chmod +x $MINECRAFT_DIR/generate-sslcert.sh
+  chmod +x $_MINECRAFT_DIR/service.js
+  chmod +x $_MINECRAFT_DIR/mineos_console.js
+  chmod +x $_MINECRAFT_DIR/webui.js
+  chmod +x $_MINECRAFT_DIR/generate-sslcert.sh
 
   echo; echo =====\> generate ssl certificate
   $MINECRAFT_DIR/generate-sslcert.sh
 
   echo; echo =====\> copy configuation file to system location
-  cp $MINECRAFT_DIR/mineos.conf /etc/mineos.conf
+  cp $_MINECRAFT_DIR/mineos.conf /etc/mineos.conf
 
   echo; echo =====\> create NPM modules
-  echo "cd $MINECRAFT_DIR/; CXX=c++ npm install" | sh
+  echo "cd $_MINECRAFT_DIR/; CXX=c++ npm install" | sh
 
 }
 
@@ -85,7 +87,7 @@ Start_web-ui ()
   # Start the web ui at boot time
 
   echo; echo =====\> copy web-ui configuration file to system location 
-  cat $MINECRAFT_DIR/init/supervisor_conf.bsd >> /usr/local/etc/supervisord.conf
+  cat $_MINECRAFT_DIR/init/supervisor_conf.bsd >> /usr/local/etc/supervisord.conf
 
   echo; echo =====\> enable web-ui deamon at start up
   sysrc supervisord_enable="YES"
@@ -102,7 +104,7 @@ Add_user ()
   # add the unprivileged mcserver user
 
   echo; echo =====\> add MCSERVER user
-  echo mcserver | pw user add -n mcserver -s /bin/bash -m -h 0 -c "User for MineOS" -G games
+  echo $_MINEOS_PASSWORD | pw user add -n $_MINEOS_USER -s /bin/sh -m -h 0 -c "User for MineOS" -G games
 
 }
 
@@ -122,5 +124,5 @@ Install_MineOS
 # Start the web-ui at boot time
 Start_web-ui
 
-# Add mcserrver user
-#Add_user
+# Add mcserrver user; This is the user used to login to MineOS
+Add_user
