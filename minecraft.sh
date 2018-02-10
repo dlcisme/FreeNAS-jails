@@ -3,9 +3,19 @@
 # NOTE: you need the "s" in https to get to the webUI
 # https://www.xxx.yyy.zzz:8443
 
+# NOTE: service is called "supervisord" - see below 
+
 # code borrowed from:
 # https://minecraft.codeemo.com/mineoswiki/index.php?title=MineOS-node_(pkg_add)
 # check here for most up to date procedures.
+
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable supervisord:
+#
+# supervisord_enable="bool"     Set to NO by default.
+#                               Set it to YES to enable supervisord.
+# supervisord_config (patch):   Set to /usr/local/etc/supervisord.conf by defau$
+# supervisord_user (username):  Set to root by default.
 
 
 _GAMES_DIR="/usr/local/games"
