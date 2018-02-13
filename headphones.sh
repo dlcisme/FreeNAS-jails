@@ -10,7 +10,7 @@ chmod u+x /usr/local/etc/rc.d/headphones
 sysrc "headphones_enable=YES"
 sysrc "headphones_user=headphones"
 sysrc "headphones_dir=/usr/local/share/headphones"
-headphones sysrc "headphones_conf=/app-data/config.ini"
+sysrc "headphones_conf=/app-data/config.ini"
 sysrc "headphones_flags=--datadir /config --host=0.0.0.0"
 sed -i '' -e 's?/var/run/headphones/headphones.pid?/config/headphones.pid?g' /usr/local/etc/rc.d/headphones
 service headphones start
