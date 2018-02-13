@@ -1,5 +1,11 @@
 #!/bin/sh
 
+pkg update
+pkg upgrade
+
+pkg install py27-sqlite3
+pkg27-cheetah
+
 pkg delete -f sqlite3
 fetch "http://pkg.freebsd.org/freebsd:11:x86:64/release_0/All/sqlite3-3.13.0.txz"
 pkg add sqlite3-*.txz
