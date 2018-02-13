@@ -1,3 +1,4 @@
+#!/bin/sh
 
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python
 
