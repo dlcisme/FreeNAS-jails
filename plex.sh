@@ -26,30 +26,30 @@ _PLEXMEDIA_DATA_DIR=/app-data/Plex
 Install_Package "plexmediaserver"
 
 # make plexr the owner of app-data directory
-echo =====\> make plex owner of $_PLEXMEDIA_DATA_DIR config directory
+Inform "make plex owner of $_PLEXMEDIA_DATA_DIR config directory"
 chown -R plex:plex $_PLEXMEDIA_DATA_DIR
 
-echo =====\> set plexmedia data dir to $_PLEXMEDIA_DATA_DIR
+Inform "set plexmedia data dir to $_PLEXMEDIA_DATA_DIR"
 sysrc "plexmediaserver_support_path=$_PLEXMEDIA_DATA_DIR"
 
-echo =====\> enable plex to start at boot
+Inform "enable plex to start at boot"
 sysrc "plexmediaserver_enable=YES"
 
 
 # install trakt plug-in
 
-echo =====\> fetch trakt scrobbler
+Inform "fetch trakt scrobbler"
 fetch https://github.com/trakt/Plex-Trakt-Scrobbler/archive/master.zip -o Plex-Trakt-Scrobbler.zip
 
-echo =====\> unzip trakt
+Inform "unzip trakt"
 unzip Plex-Trakt-Scrobbler.zip
 
-echo =====\> add trakt to plex plug-ins
+Inform "add trakt to plex plug-ins"
 cp -r Plex-Trakt-Scrobbler-*/Trakttv.bundle "/usr/local/plexdata/Plex Media Server/Plug-ins/"
 
-echo =====\> make plex owner of trakt plug-in
+Inform "make plex owner of trakt plug-in"
 chown -R plex:plex "/usr/local/plexdata/Plex Media Server/Plug-ins/Trakttv.bundle"
 
-echo =====\> set trakt permissions
+Inform "set trakt permissions"
 chmod -R 770 "/usr/local/plexdata/Plex Media Server/Plug-ins/Trakttv.bundle"
 
