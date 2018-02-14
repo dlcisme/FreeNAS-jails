@@ -64,28 +64,28 @@ Install_Required_Packages ()
 Install_MineOS ()
 {
 
-  echo; echo =====\> create directory /usr/local/compat/linux/proc
+  Inform "create directory /usr/local/compat/linux/proc"
   mkdir -p /usr/local/compat/linux/proc
 
-  echo; echo =====\> create directory $_GAMES_DIR
+  Inform "create directory $_GAMES_DIR"
   mkdir -p $_GAMES_DIR
 
-  echo; echo =====\> get MineOS from github
+  Inform "get MineOS from github"
   git clone git://github.com/hexparrot/mineos-node $_MINECRAFT_DIR
 
-  echo; echo =====\> grant execute permission to files
+  Inform "grant execute permission to files"
   chmod +x $_MINECRAFT_DIR/service.js
   chmod +x $_MINECRAFT_DIR/mineos_console.js
   chmod +x $_MINECRAFT_DIR/webui.js
   chmod +x $_MINECRAFT_DIR/generate-sslcert.sh
 
-  echo; echo =====\> generate ssl certificate
+  Inform "generate ssl certificate"
   $_MINECRAFT_DIR/generate-sslcert.sh
 
-  echo; echo =====\> copy configuation file to system location
+  Inform "copy configuation file to system location"
   cp $_MINECRAFT_DIR/mineos.conf /etc/mineos.conf
 
-  echo; echo =====\> create NPM modules
+  Inform "create NPM modules"
   echo "cd $_MINECRAFT_DIR/; CXX=c++ npm install" | sh
 
 }
@@ -99,10 +99,10 @@ Start_web-ui ()
 
   # Start the web ui at boot time
 
-  echo; echo =====\> copy web-ui configuration file to system location 
+  Inform "copy web-ui configuration file to system location" 
   cat $_MINECRAFT_DIR/init/supervisor_conf.bsd >> /usr/local/etc/supervisord.conf
 
-  echo; echo =====\> enable web-ui deamon at start up
+  Inform "enable web-ui deamon at start up"
   sysrc supervisord_enable="YES"
 
 }
@@ -116,7 +116,7 @@ Add_user ()
 
   # add the unprivileged mcserver user
 
-  echo; echo =====\> add MCSERVER user
+  Inform "add MCSERVER user"
   echo $_MINEOS_PASSWORD | pw user add -n $_MINEOS_USER -s /bin/sh -m -h 0 -c "User for MineOS" -G games
 
 }
