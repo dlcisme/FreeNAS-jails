@@ -28,19 +28,16 @@ _SONARR_USER=media
 Install_Package "sonarr"
 
 # make sonarr the owner of app-data directory
-echo =====\> make sonarr owner of $_SONARR_DATA_DIR config directory
+Inform "make sonarr owner of $_SONARR_DATA_DIR config directory"
 chown -R sonarr:sonarr $_SONARR_DATA_DIR
 
-echo =====\> set sonarr data dir to $_SONARR_DATA_DIR
+Inform "set sonarr data dir to $_SONARR_DATA_DIR"
 sysrc "sonarr_data_dir=$_SONARR_DATA_DIR"
 
-#echo =====\> have sonarr run as user $_SONARR_USER
-#sysrc "sonarr_user=$_SONARR_USER"
-
-echo =====\> enable sonarr to start at boot
+Inform "enable sonarr to start at boot"
 sysrc  "sonarr_enable=YES"
 
-echo =====\> add "sonarr" user to "media" group
+Inform "add media group to sonarr user"
 pw groupmod media -m sonarr
 
 
