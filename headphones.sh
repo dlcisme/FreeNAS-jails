@@ -52,7 +52,7 @@ Install_Required_Packages ()
 Fix_Bugs ()
 {
   Inform "fixing bugs for FreeBSD 11.1 -> FreeBSD 11.0"
-  pkg delete -f sqlite3
+  pkg delete -y -f sqlite3
   fetch "http://pkg.freebsd.org/freebsd:11:x86:64/release_0/All/sqlite3-3.13.0.txz"
   pkg add sqlite3-*.txz
   rm sqlite3-3.13.0.txz
@@ -101,7 +101,7 @@ Set_rc.conf ()
   sysrc "headphones_conf=$_HEADPHONES_DATA_DIR/config.ini"
 
   Inform "set headphones argument flags"
-  sysrc "headphones_flags=--datadir $_HEADPHONES_DATA_DIR --host=0.0.0.0"
+  sysrc "headphones_flags=--host=0.0.0.0"
   
 }
 
