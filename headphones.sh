@@ -20,6 +20,8 @@
 #======================================================
 
 _HEADPHONES_DATA_DIR=/app-data/Headphones
+_HEADPHONES_USER=headphones
+_HEADPHONES_GROUP=media
 
 
 
@@ -70,7 +72,7 @@ Install_Headphones ()
   git clone https://github.com/rembo10/headphones.git /usr/local/share/headphones
 
   Inform "create headphones user"
-  pw user add headphones -g media -c headphones -u 110 -d /nonexistent -s /usr/bin/nologin
+  pw user add $_HEADPHONES_USER -g $_HEADPHONES_GROUP -c headphones -u 110 -d /nonexistent -s /usr/bin/nologin
 
   Inform "make headphones owner of program and data"
   chown -R headphones:headphones /usr/local/share/headphones $_HEADPHONES_DATA_DIR
