@@ -16,16 +16,12 @@
 #     Default is headphones.pid in headphones_dir.
 
 
-
-# maybe make new function "hint"/"clue"/tip"advise"notify"report/tell/write/inform 
-# to display messages to user
-
 # functions to help installation
 . ./functions.sh
 
 # upadate everything first
 pkg update
-pkg upgrade
+pkg upgrade -y
 
 # install the required packages
 Install_Package "py27-sqlite3"
@@ -42,43 +38,38 @@ pkg add sqlite3-*.txz
 rm sqlite3-3.13.0.txz
 #---------------------------------------------------------------------------------
 
-
-# test ... is this needed
-echo; echo =====\> is this still needed?? test
+Inform "make sure system uses python 2.7"
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python
 
-echo; echo =====\> get Headphones from git
+Inform "get Headphones from git"
 git clone https://github.com/rembo10/headphones.git /usr/local/share/headphones
 
-echo; echo =====\> create headphones user
+Inform "create headphones user"
 pw user add headphones -c headphones -u 110 -d /nonexistent -s /usr/bin/nologin
 
-echo; echo =====\> make headphones owner of program and data
+Inform "make headphones owner of program and data"
 chown -R headphones:headphones /usr/local/share/headphones /app-data/headphones
 
-echo; echo =====\> copy rc script to system location
+Inform "copy rc script to system location"
 cp /usr/local/share/headphones/init-scripts/init.freebsd /usr/local/etc/rc.d/headphones
 
-echo; echo =====\> grant execution to files
+Inform "grant execution to rc script"
 chmod u+x /usr/local/etc/rc.d/headphones
 
-echo; echo =====\> enable headphones at start up
+Inform "enable headphones at start up"
 sysrc "headphones_enable=YES"
 
-echo; echo =====\> make headphones the user of program
+Inform "make headphones the user of program"
 sysrc "headphones_user=headphones"
 
-echo; echo =====\> set headphones program directory
+Inform "set headphones program directory"
 sysrc "headphones_dir=/usr/local/share/headphones"
 
-echo;echo =====\> set headphones data directory
+Inform "set headphones data directory"
 sysrc "headphones_conf=/app-data/headphones/config.ini"
 
-echo; echo =====\> set headphones program flags
+Inform "set headphones argument flags"
 sysrc "headphones_flags=--datadir /app-data/headphones --host=0.0.0.0"
 
-echo; echo not sure what this does
-sed -i '' -e 's?/var/run/headphones/headphones.pid?/app-data/headphones/headphones.pid?g' /usr/local/etc/rc.d/headphones
-
-echo; echo starting headphones
+Inform "start headphones"
 service headphones start
