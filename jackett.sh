@@ -31,14 +31,14 @@ _JACKETT_DATA_DIR=/app-data/Jackett
 Install_Package "jackett"
 
 # make jackett the owner of app-data directory
-echo =====\> make jackett owner of $_JACKETT_CONFIG_DIR config directory
+Inform "make jackett owner of $_JACKETT_CONFIG_DIR config directory"
 chown -R jackett:jackett $_JACKETT_DATA_DIR
 
 # set data directory for jackett
-echo =====\> set jackett data dir to $_JACKETT_DATA_DIR
+Inform "set jackett data dir to $_JACKETT_DATA_DIR"
 sysrc "jackett_data_dir=$_JACKETT_DATA_DIR"
 
 # enable jackett to start at boot
-echo =====\> enable jackett to start at boot
+Inform "enable jackett to start at boot"
 sysrc  "jackett_enable=YES"
 
