@@ -20,12 +20,12 @@
 #            Default: /usr/local/jackett
 
 
+_JACKETT_DATA_DIR=/app-data/Jackett
+
+
 
 # functions to help installation
 . ./functions.sh
-
-_JACKETT_DATA_DIR=/app-data/Sonarr
-_JACKETT_USER=media
 
 # install jackett
 Install_Package "jackett"
