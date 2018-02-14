@@ -32,15 +32,15 @@ _TRANSMISSION_DOWNLOAD_DIR=/app-data/Downloads
 Install_Package "transmission"
 
 # make transmission the owner of Transmission config directory
-echo =====\> make transmission owner of $_TRANSMISSION_CONFIG_DIR config directory
+Inform "make transmission owner of $_TRANSMISSION_CONFIG_DIR config directory"
 chown -R transmission:transmission $_TRANSMISSION_CONFIG_DIR
 
 # enable transmission to start at boot
-echo =====\> enable transmission to start at boot
+Inform "enable transmission to start at boot"
 sysrc "transmission_enable=YES"
 
 # directory for transmission configuration files
-echo =====\> set directory for transmission configuation files
+Inform "set directory for transmission configuation files"
 sysrc "transmission_conf_dir=$_TRANSMISSION_CONFIG_DIR"
 
 # directory for transmission download files
@@ -48,4 +48,5 @@ echo =====\> set directory for transmission download files
 sysrc "transmission_download_dir=$_TRANSMISSION_DOWNLOAD_DIR"
 
 # change transmission's group to be media
+Inform "add media group to transmission user"
 pw usermod transmission -g media
