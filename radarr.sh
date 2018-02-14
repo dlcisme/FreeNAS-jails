@@ -27,16 +27,16 @@ _RADARR_DATA_DIR=/app-data/Radarr
 Install_Package "radarr"
 
 # make radarr the owner of app-data directory
-echo =====\> make radarr owner of $_RADARR_DATA_DIR config directory
+Inform "make radarr owner of $_RADARR_DATA_DIR config directory"
 chown -R radarr:radarr $_RADARR_DATA_DIR
 
-echo =====\> set radarr data dir to $_RADARR_DATA_DIR
+Inform "set radarr data dir to $_RADARR_DATA_DIR"
 sysrc "radarr_data_dir=$_RADARR_DATA_DIR"
 
-echo =====\> enable radarr start at boot
+Inform "enable radarr start at boot"
 sysrc "radarr_enable=YES"
 
 # add radarr user to media group
-echo =====\> add "radarr" user to "media" group
+Inform "add media group to radarr user"
 pw groupmod media -m radarr
 
