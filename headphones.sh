@@ -70,7 +70,7 @@ Install_Headphones ()
   git clone https://github.com/rembo10/headphones.git /usr/local/share/headphones
 
   Inform "create headphones user"
-  pw user add headphones -c headphones -u 110 -d /nonexistent -s /usr/bin/nologin
+  pw user add headphones -g media -c headphones -u 110 -d /nonexistent -s /usr/bin/nologin
 
   Inform "make headphones owner of program and data"
   chown -R headphones:headphones /usr/local/share/headphones $_HEADPHONES_DATA_DIR
@@ -101,7 +101,7 @@ Set_rc.conf ()
   sysrc "headphones_conf=$_HEADPHONES_DATA_DIR/config.ini"
 
   Inform "set headphones argument flags"
-  sysrc "headphones_flags=--host=0.0.0.0"
+  sysrc "headphones_flags=--datadir=$_HEADPHONES_DATA_DIR --host=0.0.0.0"
   
 }
 
