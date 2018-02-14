@@ -28,13 +28,13 @@ _NGINX_DATA_DIR=/app-data/Nginx
 Install_Package "nginx"
 
 # make nginx the owner of Nginx config directory
-echo =====\> make nginx owner of $_NGINX_DATA_DIR config directory
+Inform "make nginx owner of $_NGINX_DATA_DIR config directory"
 chown -R nginx:nginx $_NGINX_DATA_DIR
 
 # enable nginx to start at boot
-echo =====\> enable nginx to start at boot
+Inform "enable nginx to start at boot"
 sysrc "nginx_enable=YES"
 
 # set Nginx config file and data directory location
-echo =====\> set Nginx config file and data directory location
+Inform "set Nginx config file and data directory location"
 sysrc "nginx_flags=-c $_NGINX_DATA_DIR/nginx.conf -p $_NGINX_DATA_DIR"
