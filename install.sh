@@ -17,8 +17,9 @@ _OPTIONS="
 3. Install Jackett
 4. Install Sonarr
 5. Install Radarr
-6. Install Plex
-7. Install Minecraft
+6. Install Headphones
+7. Install Plex
+8. Install Minecraft
 Q. Quit
 "
 
@@ -77,8 +78,9 @@ Do_User_Choice ()
      3 ) Install_Choice "jackett" ;;
      4 ) Install_Choice "sonarr" ;;
      5 ) Install_Choice "radarr" ;;
-     6 ) Install_Choice "plex" ;;
-     7 ) Install_Choice "minecraft" ;;
+     6 ) Install_Choice "headphones" ;;
+     7 ) Install_Choice "plex" ;;
+     8 ) Install_Choice "minecraft" ;;
    q|Q ) break;;
      * ) _Error_Message="$_CHOICE_ERR_MSG $_choice" ;;
   esac
