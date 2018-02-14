@@ -38,7 +38,7 @@ Install_Required_Packages ()
 
   # install the required packages
   Install_Package "py27-sqlite3"
-  Install_Package "pkg27-cheetah"
+  Install_Package "py27-cheetah"
   
 }
 
@@ -111,6 +111,9 @@ Set_rc.conf ()
 
 # Install the required packages
 Install_Required_Packages
+
+# Fix the bugs from package installs (FreeNAS jails 11.0)
+Fix_Bugs
 
 # Install Headphones
 Install_Headphones
