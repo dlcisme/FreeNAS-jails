@@ -30,6 +30,12 @@ _JACKETT_DATA_DIR=/app-data/Jackett
 # install jackett
 Install_Package "jackett"
 
+# make jackett the owner of program directory
+Inform "make jackett the owner of the program directory"
+chown -R jackett:jackett /usr/local/share/jackett
+
+
+
 # make jackett the owner of app-data directory
 Inform "make jackett owner of $_JACKETT_CONFIG_DIR config directory"
 chown -R jackett:jackett $_JACKETT_DATA_DIR
