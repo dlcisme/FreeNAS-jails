@@ -26,6 +26,10 @@ _RADARR_DATA_DIR=/app-data/Radarr
 # install radarr
 Install_Package "radarr"
 
+# make radarr the owner of program directory
+Inform "make radarr the owner of the program directory"
+chown -R radarr:radarr /usr/local/share/radarr
+
 # make radarr the owner of app-data directory
 Inform "make radarr owner of $_RADARR_DATA_DIR config directory"
 chown -R radarr:radarr $_RADARR_DATA_DIR
