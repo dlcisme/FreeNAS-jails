@@ -22,10 +22,13 @@
 . ./functions.sh
 
 _SONARR_DATA_DIR=/app-data/Sonarr
-_SONARR_USER=media
 
 # install sonarr
 Install_Package "sonarr"
+
+# make sonarr the owner of program directory
+Inform "make sonarr the owner of the program directory"
+chown -R sonarr:sonarr /usr/local/share/sonarr
 
 # make sonarr the owner of app-data directory
 Inform "make sonarr owner of $_SONARR_DATA_DIR config directory"
