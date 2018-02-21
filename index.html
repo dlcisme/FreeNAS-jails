@@ -16,15 +16,22 @@
         height: 100%;
     }
     
-    .nav-tabs>li>a.sabnzbd_logo {
-        background: url("http://192.168.0.3:8080/static/images/logo.png") no-repeat top right;
-        background-position: 0 0px;
+    .nav-tabs>li>a.transmission_logo {
+        background: url("http://192.168.0.202:8080/transmission/web/images/webclip-icon.png") no-repeat top right;
+        background-size: contain;
         float: left;
-        height: 40px;
-        padding-left: 50px;
-        padding-right: 50px;
+        height: 50px;
+        width: 50px;
     }
     
+   .nav-tabs>li>a.jackett_logo {
+        background: url("http://192.168.0.203:8080/jacket_medium.png") no-repeat top right;
+        background-size: contain;
+        float: left;
+        height: 50px;
+        width: 50px;
+    }
+
     .nav-tabs>li>a.sonarr_logo {
         background: url("http://192.168.0.212:8080/Content/Images/logos/64.png") no-repeat top right;
         background-size: contain;
@@ -72,6 +79,13 @@
         height: 40px;
         width: 150px;
     }
+
+   .nav-tabs>li>a.minecraft_logo {
+        background: url("https://192.168.0.220:8080/admin/img/logo-dark.png") no-repeat top right;
+        background-size: contain;
+        height: 40px;
+        width: 150px;
+    }
     
     .nav-tabs>li>a.madsonic_logo {
         background: url("http://192.168.0.3:4040/icons/madsonic_sunny/logo.png") no-repeat top right;
@@ -93,8 +107,9 @@
 <div>
   <ul class="nav nav-tabs" id="myTabs">
     <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-    <li><a href="#freenas" data-toggle="tab" class="freenas_logo"></a></li>
-    <li><a href="#freenasftp" data-toggle="tab">NAS FTP</a></li>
+    <li><a href="#freenas" data-toggle="tab" class="freenas_logo" alt="FreeNAS"></a></li>
+    <li><a href="#transmission" data-toggle="tab" class="transmission_logo" alt="Transmission"></a></li>
+    <li><a href="#jackett" data-toggle="tab" class="jackett_logo" alt="Jackett"></a></li>
     <li><a href="#plex" data-toggle="tab" class="plex_logo" alt="Plex"></a></li>
     <li><a href="#plexpy" data-toggle="tab" class="plexpy_logo" alt="PlexPy">PlexPy</a></li>
     <li><a href="#sabnzbd" data-toggle="tab" class="sabnzbd_logo" alt="Sabnzbd"></a></li>
@@ -102,7 +117,7 @@
     <li><a href="#sonarr" data-toggle="tab" class="sonarr_logo" alt="Sonarr"></a></li>
     <li><a href="#radarr" data-toggle="tab" class="radarr_logo" alt="Radarr"></a></li>
     <li><a href="#headphones" data-toggle="tab" class="headphones_logo" alt="Headphones"></a></li>
-    <li><a href="#deluge" data-toggle="tab">Deluge</a></li>
+    <li><a href="#minecraft" data-toggle="tab" class="minecraft_logo" alt="Deluge"></a></li>
     <li><a href="#calibre" data-toggle="tab" class="calibre_logo"></a></li>
     <li><a href="#ttrss" data-toggle="tab">TT-RSS</a></li>
     <li><a href="#madsonic" data-toggle="tab" class="madsonic_logo"></a></li>
@@ -114,8 +129,8 @@
         <p>Home!</p>
     </div>
     <div class="tab-pane" id="freenas" data-src="http://192.168.0.200"><iframe src="" allowfullscreen></iframe></div>
-    <div class="tab-pane" id="freenasftp" data-src="ftp://192.168.0.3"><iframe src="" allowfullscreen></iframe></div>
-    <div class="tab-pane" id="sabnzbd" data-src="http://192.168.0.3:8080"><iframe src="" allowfullscreen></iframe></div>
+    <div class="tab-pane" id="transmission" data-src="http://192.168.0.202:8080"><iframe src="" allowfullscreen></iframe></div>
+    <div class="tab-pane" id="jackett" data-src="http://192.168.0.203:8080"><iframe src="" allowfullscreen></iframe></div>
     <div class="tab-pane" id="sickrage" data-src="http://192.168.0.3:8081"><iframe src="" allowfullscreen></iframe></div>
     <div class="tab-pane" id="sonarr" data-src="http://192.168.0.212:8080"><iframe src="" allowfullscreen></iframe></div>
     <div class="tab-pane" id="radarr" data-src="http://192.168.0.213:8080"><iframe src="" allowfullscreen></iframe></div>
