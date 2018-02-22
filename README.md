@@ -17,3 +17,6 @@ sysctls: allow.raw_sockets=true,allow.sysvipc=true
 # allow service to run under ports 1024
 sysctl net.inet.ip.portrange.reservedhigh=0
 ```
+
+MineOS
+/etc/mineos.conf -> config file, can change port and ssl here
