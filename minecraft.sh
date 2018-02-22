@@ -9,6 +9,10 @@
 # https://minecraft.codeemo.com/mineoswiki/index.php?title=MineOS-node_(pkg_add)
 # check here for most up to date procedures.
 
+# here is the code for mineos
+# https://github.com/hexparrot/mineos-node
+ 
+
 # Add the following line to /etc/rc.conf.local or /etc/rc.conf
 # to enable supervisord:
 #
