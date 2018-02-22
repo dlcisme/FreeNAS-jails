@@ -20,3 +20,10 @@ sysctl net.inet.ip.portrange.reservedhigh=0
 
 MineOS
 /etc/mineos.conf -> config file, can change port and ssl here
+
+
+Plex
+/app-data/Plex/Plex Media Server/Preferences.xlm -> advanced hidden server settings
+
+
+
