@@ -25,5 +25,11 @@ MineOS
 Plex
 /app-data/Plex/Plex Media Server/Preferences.xlm -> advanced hidden server settings
 
+Plex upgrade
+ service plexmediaserver_plexpass stop to halt the old running Plex.
+ pkg update to download the latest database of available packages.
+ pkg upgrade to perform updates of any new packages, including Plex.
+ service plexmediaserver_plexpass start to start the new version of Plex.
+
 
 
