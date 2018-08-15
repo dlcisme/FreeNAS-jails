@@ -31,5 +31,6 @@ Plex upgrade
  pkg upgrade to perform updates of any new packages, including Plex.
  service plexmediaserver_plexpass start to start the new version of Plex.
 
-
-
+To allow installation of PORTS on old 11.0 system
+Add to the make.conf file: 
+"ALLOW_UNSUPPORTED_SYSTEM=yes"
