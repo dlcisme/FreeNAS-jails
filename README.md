@@ -1,7 +1,12 @@
 # FreeNAS-jails
 Scripts to install software in jails
 
-Note: Parametes for start up scripts are kept in (program name).in.  Use "find / -name (program name).in" to find the location of the file to get the start up script parameters to set in /etc/rc.conf file.
+Note: 
+* Parametes for start up scripts are kept in (program name).in.  Use "find / -name (program name).in" to find the location of the file to get the start up script parameters to set in /etc/rc.conf file.
+
+* To allow jails to run packages not in FreeNAS repository set repository to 'YES' in
+/usr/local/etc/pkg/repos/FreeBSD.conf 
+
 
 Todo:  When creating jails
 
@@ -23,13 +28,13 @@ MineOS
 
 
 Plex
-/app-data/Plex/Plex Media Server/Preferences.xlm -> advanced hidden server settings
+* /app-data/Plex/Plex Media Server/Preferences.xlm -> advanced hidden server settings
 
 Plex upgrade
- service plexmediaserver_plexpass stop to halt the old running Plex.
- pkg update to download the latest database of available packages.
- pkg upgrade to perform updates of any new packages, including Plex.
- service plexmediaserver_plexpass start to start the new version of Plex.
+ * service plexmediaserver_plexpass stop to halt the old running Plex.
+ * pkg update to download the latest database of available packages.
+ * pkg upgrade to perform updates of any new packages, including Plex.
+ * service plexmediaserver_plexpass start to start the new version of Plex.
 
 To allow installation of PORTS on old 11.0 system
 Add to the make.conf file: 
