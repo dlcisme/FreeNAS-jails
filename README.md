@@ -7,7 +7,7 @@ Note:
 * To allow jails to run packages not in FreeNAS repository set repository to 'YES' in
 /usr/local/etc/pkg/repos/FreeBSD.conf 
 
-* GID & UID for FreshPorts -- https://www.freshports.org/UIDs
+* GID & UID for FreshPorts -- https://github.com/freebsd/freebsd-ports/blob/master/UIDs
 
 
 Todo:  When creating jails
