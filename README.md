@@ -12,6 +12,14 @@ mkdir -p /usr/local/etc/pkg/repos
 cp /etc/pkg/FreeBSD.conf /usr/local/etc/pkg/repos/FreeBSD.conf
 ```
 
+* To install an old package: (packages are in /var/cache/pkg/)
+1. copy the *.txz file from the old jail to a new jail (WinSCP works great)
+2. install the package
+```
+pkg install /var/chache/pkg/unifi5-5.12.35.txz
+```
+
+
 * GID & UID for FreshPorts -- https://github.com/freebsd/freebsd-ports/blob/master/UIDs
 
 
